@@ -1,6 +1,6 @@
-    
-function Home(){
-    return(
+
+function Home() {
+    return (
         <>
             <div>
                 <div>
@@ -11,17 +11,29 @@ function Home(){
                         <p>Please choose between the following topics</p>
                     </div>
                     <ul>
-                        <li>Science</li>
-                        <li>Technology</li>
-                        <li>Engineering</li>
-                        <li>Mathematics</li>
+                        <li>
+                            <div></div>
+                            <p>Science</p>
+                        </li>
+                        <li>
+                            <div></div>
+                            <p>Technology</p>
+                        </li>
+                        <li>
+                            <div></div>
+                            <p>Engineering</p>
+                        </li>
+                        <li>
+                            <div></div>
+                            <p>Mathematics</p>
+                        </li>
                     </ul>
                 </div>
-                
+
             </div>
-        </> 
+        </>
     );
-    
+
 }
-    
+
 export default Home;
