@@ -5,7 +5,7 @@ function Setting({clicked = false}){
     return(
         <>
             {clicked && <>
-                <div className="h-[45vh] w-[20vw] p-3 flex flex-col gap-1 justify-center rounded-2xl shadow absolute right-10 top-5">
+                <div className="h-[45vh] w-[20vw] p-3 flex flex-col gap-1 justify-center rounded-2xl shadow absolute right-10 top-20 z-10">
                     <div className="h-[10%] w-full flex justify-between items-center">
                         <div>
                             <p>Tahiana Fenosoa</p>

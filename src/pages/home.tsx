@@ -1,14 +1,24 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
+import Setting from "../components/setting.tsx";
+import { useState } from "react";
+
 function Home() {
+
+    const [ settingsClicked , setSettingsClicked ] = useState(false);
+
+    function showSettings(){
+        setSettingsClicked(prev => !prev);
+    }
+
     return (
         <>
-            <div className="h-screen w-full flex flex-col gap-2">
+            <div className="h-screen w-full flex flex-col gap-2 relative">
                 <div className="h-[10%] w-full flex justify-between items-center p-2 pl-10 pr-10">
                     <div>
                         <h1 className="text-2xl font-medium">Welcome to lobby</h1>
                     </div>
-                    <div>
+                    <div onClick={showSettings}>
                         <FontAwesomeIcon icon={faGear}  size="2xl"/>
                     </div>
                 </div>
@@ -35,7 +45,7 @@ function Home() {
                         </li>
                     </ul>
                 </div>
-
+                <Setting clicked={settingsClicked}/>
             </div>
         </>
     );
