@@ -1,7 +1,17 @@
 import Module from "../components/module";
+import { getModulesAtTopicId  , type TopicData} from "../data/home.data";
+import { useParams } from "react-router";
+import NotFound from "../components/notfound";
+
 function ModulePage(){
 
-    
+    const { id } = useParams();
+    const topidId = Number(id);
+    const searchedModule : TopicData[] = getModulesAtTopicId(topidId);
+
+    if(searchedModule.length === 0){
+        return <NotFound/>
+    }
 
     return(
         <>
@@ -10,7 +20,9 @@ function ModulePage(){
                     <h1 className="text-2xl font-medium">Title</h1>
                 </div>
                 <ul className="h-[20%] flex items-center  justify-start gap-5">
-                    <Module moduleName="Software"/>
+                    {
+                        searchedModule.map(module => <Module moduleName={module.name}/>)
+                    }
                 </ul>
             </div>
         </> 
