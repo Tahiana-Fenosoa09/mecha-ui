@@ -33,10 +33,6 @@ function Home() {
                     <ul className="w-full flex items-center justify-center gap-40 ">
                         {
                             topics.map(topic => (
-                                // <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
-                                //     <div className="w-[10vw] aspect-square rounded-full bg-black"></div>
-                                //     <p>{topic.name}</p>
-                                // </li>
                                 < Topic topicName={topic.name}/>
                             ))
                         }

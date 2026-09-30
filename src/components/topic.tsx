@@ -1,5 +1,5 @@
 
-function Topic(topicName : string) {
+function Topic({topicName}: { topicName : string }) {
     return (
         <>
             <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
