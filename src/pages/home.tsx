@@ -10,6 +10,7 @@ function Home() {
     function showSettings(){
         setSettingsClicked(prev => !prev);
     }
+    
 
     return (
         <>
