@@ -1,11 +1,11 @@
-interface Module {
+export interface Module {
     parentId: number,
     id: number,
     name: string,
     size: number
 }
 
-interface Topic {
+export interface Topic {
     id: number,
     name: string,
     size: number

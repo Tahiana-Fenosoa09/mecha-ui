@@ -2,15 +2,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import Setting from "../components/setting.tsx";
 import { useState } from "react";
+import { getTopics, type Topic } from "../data/home.data.ts";
 
 function Home() {
 
-    const [ settingsClicked , setSettingsClicked ] = useState(false);
+    const [settingsClicked, setSettingsClicked] = useState(false);
+    const topics: Topic[] = getTopics();
 
-    function showSettings(){
+    function showSettings() {
         setSettingsClicked(prev => !prev);
     }
-    
+
+
+
 
     return (
         <>
@@ -20,7 +24,7 @@ function Home() {
                         <h1 className="text-2xl font-medium">Welcome to lobby</h1>
                     </div>
                     <div onClick={showSettings}>
-                        <FontAwesomeIcon icon={faGear}  size="2xl"/>
+                        <FontAwesomeIcon icon={faGear} size="2xl" />
                     </div>
                 </div>
                 <div className="h-[50%] p-3 flex flex-col justify-center items-center gap-10">
@@ -28,25 +32,17 @@ function Home() {
                         <p className="text-xl ">Please choose between the following topics</p>
                     </div>
                     <ul className="w-full flex items-center justify-center gap-40 ">
-                        <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
-                            <div className="w-[10vw] aspect-square rounded-full bg-black"></div>
-                            <p>Science</p>
-                        </li>
-                        <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
-                            <div className="w-[10vw] aspect-square rounded-full bg-black"></div>
-                            <p>Technology</p>
-                        </li>
-                       <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
-                            <div className="w-[10vw] aspect-square rounded-full bg-black"></div>
-                            <p>Engineering</p>
-                        </li>
-                        <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
-                            <div className="w-[10vw] aspect-square rounded-full bg-black"></div>
-                            <p>Mathematics</p>
-                        </li>
+                        {
+                            topics.map(topic => (
+                                <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
+                                    <div className="w-[10vw] aspect-square rounded-full bg-black"></div>
+                                    <p>{topic.name}</p>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
-                <Setting clicked={settingsClicked}/>
+                <Setting clicked={settingsClicked} />
             </div>
         </>
     );
