@@ -40,7 +40,7 @@ function Home() {
                     <ul className="w-full flex items-center justify-center gap-40 ">
                         {
                             topics.map(topic => (
-                                < Topic topicName={topic.name} onclick={navigate( `/topics/${topic.id}`)}/>
+                                < Topic topicName={topic.name} onClick={() => {navigate(`/topics/${topic.id}`)}}/>
                             ))
                         }
                     </ul>
