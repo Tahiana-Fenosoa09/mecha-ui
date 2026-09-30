@@ -1,17 +1,17 @@
-export interface Module {
+export interface ModuleData {
     parentId: number,
     id: number,
     name: string,
     size: number
 }
 
-export interface Topic {
+export interface TopicData {
     id: number,
     name: string,
     size: number
 }
 
-const topics : Topic[] = [
+const topics : TopicData[] = [
     {
         id: 1,
         name: 'Science',
@@ -38,7 +38,7 @@ const topics : Topic[] = [
     },
 ];
 
-const modules : Module[] = [
+const modules : ModuleData[] = [
     {
         parentId: 2,
         id: 1,
@@ -55,7 +55,7 @@ const modules : Module[] = [
 
 
 
-export function getModulesAtTopicId(id: number) : Module[] {
+export function getModulesAtTopicId(id: number) : ModuleData[] {
     const moduleList = modules.filter((module) => {
         return module.parentId === id;
     });
@@ -63,6 +63,6 @@ export function getModulesAtTopicId(id: number) : Module[] {
     return moduleList;
 }
 
-export function getTopics() : Topic[] {
+export function getTopics() : TopicData[] {
     return topics;
 }

@@ -2,18 +2,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 import Setting from "../components/setting.tsx";
 import { useState } from "react";
-import { getTopics, type Topic } from "../data/home.data.ts";
+import { getTopics, type TopicData } from "../data/home.data.ts";
+import Topic from "../components/topic.tsx";
 
 function Home() {
 
     const [settingsClicked, setSettingsClicked] = useState(false);
-    const topics: Topic[] = getTopics();
+    const topics: TopicData[] = getTopics();
 
     function showSettings() {
         setSettingsClicked(prev => !prev);
     }
-
-
 
 
     return (
@@ -34,10 +33,11 @@ function Home() {
                     <ul className="w-full flex items-center justify-center gap-40 ">
                         {
                             topics.map(topic => (
-                                <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
-                                    <div className="w-[10vw] aspect-square rounded-full bg-black"></div>
-                                    <p>{topic.name}</p>
-                                </li>
+                                // <li className="h-full p-2 flex flex-col justify-center items-center gap-2">
+                                //     <div className="w-[10vw] aspect-square rounded-full bg-black"></div>
+                                //     <p>{topic.name}</p>
+                                // </li>
+                                < Topic topicName={topic.name}/>
                             ))
                         }
                     </ul>
