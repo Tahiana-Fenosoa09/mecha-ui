@@ -4,9 +4,7 @@ import Setting from "../components/setting.tsx";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { getTopics, type TopicData } from "../data/home.data.ts";
-import { Routes, Route } from "react-router";
 import Topic from "../components/topic.tsx";
-import ModulePage from "./modulePage.tsx";
 
 
 function Home() {
@@ -21,9 +19,6 @@ function Home() {
     
     return (
         <>
-            <Routes>
-                <Route path="/topics/:id" element={<ModulePage/>}/>
-            </Routes>
             <div className="h-screen w-full flex flex-col gap-2 relative">
                 <div className="h-[10%] w-full flex justify-between items-center p-2 pl-10 pr-10">
                     <div>
