@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router";
 import Home from "./pages/home";
 import ModulePage from "./pages/modulePage";
+import NotFound from "./components/notfound";
 
 function App() {
   return (
