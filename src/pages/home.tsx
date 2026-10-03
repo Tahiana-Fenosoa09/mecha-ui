@@ -3,14 +3,14 @@ import { faGear } from "@fortawesome/free-solid-svg-icons";
 import Setting from "../components/setting.tsx";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { getTopics, type TopicData } from "../data/home.data.ts";
-import Topic from "../components/topic.tsx";
+import { getBranches, type BranchData } from "../data/home.data.ts";
+import Branch from "../components/branch.tsx";
 
 
 function Home() {
 
     const [settingsClicked, setSettingsClicked] = useState(false);
-    const topics: TopicData[] = getTopics();
+    const branches : BranchData[] = getBranches();
     const navigate = useNavigate();
 
     function showSettings() {
@@ -34,8 +34,8 @@ function Home() {
                     </div>
                     <ul className="w-full flex items-center justify-center gap-40 ">
                         {
-                            topics.map(topic => (
-                                < Topic topicName={topic.name} onClick={() => {navigate(`/topics/${topic.id}`)}}/>
+                            branches.map(branch => (
+                                < Branch branchName={branch.name} onClick={() => {navigate(`/topics/${branch.id}`)}}/>
                             ))
                         }
                     </ul>
