@@ -1,16 +1,17 @@
 import Module from "../components/module";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { getModulesAtTopicId  , type TopicData} from "../data/home.data";
+import { getModulesAtTopicId  , getTopicTitle, type TopicData} from "../data/home.data";
 import { useNavigate, useParams} from "react-router";
 import NotFound from "../components/notfound";
 
 function ModulePage(){
 
     const { id } = useParams();
-    const topidId = Number(id);
-    const searchedModule : TopicData[] = getModulesAtTopicId(topidId);
+    const topicId = Number(id);
+    const searchedModule : TopicData[] = getModulesAtTopicId(topicId);
     const navigate = useNavigate();
+    const title = getTopicTitle(topicId);
 
     function goBack(){
         navigate(-1);
@@ -21,7 +22,7 @@ function ModulePage(){
             <div className="w-full h-screen flex flex-col gap-5 p-5">
                 <div className="w-full h-[15%] flex items-center justify-center pl-10 pr-10">
                     <div className="w-full h-full flex items-center justify-start">
-                        <h1 className="text-2xl font-medium">Title</h1>
+                        <h1 className="text-2xl font-medium">{title}</h1>
                     </div>
                 </div>
                 {
