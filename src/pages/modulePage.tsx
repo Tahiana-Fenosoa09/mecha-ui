@@ -29,7 +29,7 @@ function ModulePage(){
                     searchedModule.length === 0 ? <NotFound/> : <>
                         <ul className="h-[20%] flex items-center  justify-start gap-5">
                             {
-                                searchedModule.map(module => <Module moduleName={module.name}/>)
+                                searchedModule.map(module => <Module moduleName={module.name} onclick={() => {navigate(`/branches/${branchId}/module/${module.id}`)}}/>)
                             }
                         </ul>
                     </>

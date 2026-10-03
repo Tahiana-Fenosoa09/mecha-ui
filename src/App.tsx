@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router";
 import Home from "./pages/home";
 import ModulePage from "./pages/modulePage";
-import Topic from "./components/topic";
+import SubModulePage from "./pages/subModulePage";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/branches/:id" element={<ModulePage />} />
-        <Route path="/submodule" element={<Topic />} />
+        <Route path="/branches/:branchedId/module/:moduleId" element={<SubModulePage />} />
       </Routes>
     </>
   )
