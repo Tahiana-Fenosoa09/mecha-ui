@@ -63,6 +63,15 @@ export function getModulesAtTopicId(id: number) : ModuleData[] {
     return moduleList;
 }
 
+
+export function getTopicTitle(id: number) : string {
+    const searchedModule = topics.find((module) => {
+        return module.id === id;
+    })
+
+    return searchedModule?.name ?? "";
+}
+
 export function getTopics() : TopicData[] {
     return topics;
 }
