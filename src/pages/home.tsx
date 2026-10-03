@@ -35,7 +35,7 @@ function Home() {
                     <ul className="w-full flex items-center justify-center gap-40 ">
                         {
                             branches.map(branch => (
-                                < Branch branchName={branch.name} onClick={() => {navigate(`/topics/${branch.id}`)}}/>
+                                < Branch branchName={branch.name} onClick={() => {navigate(`/branches/${branch.id}`)}}/>
                             ))
                         }
                     </ul>
