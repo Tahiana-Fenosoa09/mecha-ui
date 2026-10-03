@@ -5,13 +5,13 @@ export interface ModuleData {
     size: number
 }
 
-export interface TopicData {
+export interface BranchData {
     id: number,
     name: string,
     size: number
 }
 
-const topics : TopicData[] = [
+const branches : BranchData[] = [
     {
         id: 1,
         name: 'Science',
@@ -64,14 +64,14 @@ export function getModulesAtTopicId(id: number) : ModuleData[] {
 }
 
 
-export function getTopicTitle(id: number) : string {
-    const searchedModule = topics.find((module) => {
+export function getBranchTitle(id: number) : string {
+    const searchedModule = branches.find((module) => {
         return module.id === id;
     })
 
     return searchedModule?.name ?? "";
 }
 
-export function getTopics() : TopicData[] {
-    return topics;
+export function getBranches() : BranchData[] {
+    return branches;
 }

@@ -1,17 +1,17 @@
 import Module from "../components/module";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
-import { getModulesAtTopicId  , getTopicTitle, type TopicData} from "../data/home.data";
+import { getModulesAtTopicId  , getBranchTitle, type BranchData} from "../data/home.data";
 import { useNavigate, useParams} from "react-router";
 import NotFound from "../components/notfound";
 
 function ModulePage(){
 
     const { id } = useParams();
-    const topicId = Number(id);
-    const searchedModule : TopicData[] = getModulesAtTopicId(topicId);
+    const branchId = Number(id);
+    const searchedModule : BranchData[] = getModulesAtTopicId(branchId);
     const navigate = useNavigate();
-    const title = getTopicTitle(topicId);
+    const title = getBranchTitle(branchId);
 
     function goBack(){
         navigate(-1);
