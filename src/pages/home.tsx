@@ -10,7 +10,7 @@ import Disabled from "./disabled.tsx";
 
 function Home() {
 
-    const [isDisabled, setIsDisabled] = useState(true);
+    const isDisabled = true;
     const [settingsClicked, setSettingsClicked] = useState(false);
     const branches : BranchData[] = getBranches();
     const navigate = useNavigate();
