@@ -5,12 +5,11 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { getBranches, type BranchData } from "../data/home.data.ts";
 import Branch from "../components/branch.tsx";
-import Disabled from "./disabled.tsx";
+// import Disabled from "./disabled.tsx";
 
 
 function Home() {
 
-    const isDisabled = true;
     const [settingsClicked, setSettingsClicked] = useState(false);
     const branches : BranchData[] = getBranches();
     const navigate = useNavigate();
@@ -22,7 +21,7 @@ function Home() {
     
     return (
         <>
-        { isDisabled ? <Disabled/> : <>
+        {/* { isDisabled ? <Disabled/> : <> */}
             <div className="h-screen w-full flex flex-col gap-2 relative">
                 <div className="h-[10%] w-full flex justify-between items-center p-2 pl-10 pr-10">
                     <div>
@@ -46,7 +45,7 @@ function Home() {
                 </div>
                 <Setting clicked={settingsClicked} />
             </div>
-        </>}
+        {/* </>}    */}
         </>
     );
 

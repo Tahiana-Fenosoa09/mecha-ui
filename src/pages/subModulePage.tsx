@@ -18,7 +18,7 @@ function SubModulePage() {
 
     return (
         <>
-                <div className="w-full h-screen flex flex-col gap-5 p-10 ">
+                <div className="w-full h-auto min-h-screen flex flex-col gap-5 p-10 ">
                     <div className="w-full h-[15%] flex items-center justify-center pl-10 pr-10">
                         <div className="w-full h-full flex items-center justify-start">
                             <h1 className="text-2xl font-medium">{title}</h1>
@@ -26,8 +26,7 @@ function SubModulePage() {
                     </div>
                     {
                         subModule.length === 0 ? <NotFound /> : <>
-                            <ul className=" w-full flex flex-col items-center justify-start gap-5 p-2">
-                            
+                            <ul className=" w-full flex flex-col justify-start gap-10 p-2">
                                 {
                                     subModule.map(topic => <Topic title={topic.title} />)
                                 }

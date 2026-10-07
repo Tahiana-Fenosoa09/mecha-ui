@@ -1,28 +1,32 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVideo , faFile } from "@fortawesome/free-solid-svg-icons";
+import { faVideo, faFile } from "@fortawesome/free-solid-svg-icons";
 
 type SubTopicProps = {
-    type: string , 
+    type: string,
     title: string
 }
 
-function SubTopic({type = 'document',title} : SubTopicProps){
-    return(
+function SubTopic({ type = 'document', title }: SubTopicProps) {
+    return (
         <>
-            <div className="w-full h-full gap-5 flex items-center border p-2 rounded-xl">
-                <div className="w-[3vw] aspect-square rounded-full border flex justify-center items-center">
-                    { type === 'video' ? <FontAwesomeIcon icon={faVideo} /> : type === 'document' ? <FontAwesomeIcon icon={faFile} /> : <>
-                        <div className="w-[4vw] aspect-square rounded-full bg-black p-1"></div>
-                    </>
-                    }
+            <div className="w-full h-full justify-between flex items-center p-2 rounded-xl">
+                <div className="flex items-center gap-2">
+                    <div className="w-[3vw] aspect-square rounded-full border flex justify-center items-center bg-black text-white">
+                        {type === 'video' ? <FontAwesomeIcon icon={faVideo} /> : type === 'document' ? <FontAwesomeIcon icon={faFile} /> : <>
+                            <div className="w-[4vw] aspect-square rounded-full bg-black p-1"></div>
+                        </>
+                        }
+                    </div>
+                    <div>
+                        <h1 className="text-xl">{title}</h1>
+                    </div>
                 </div>
                 <div>
-                    <h1 className="text-xl">{title}</h1>
+                    <button className="w-[5vw] h-[90%] flex justify-center items-center text-xl font-medium bg-black text-white rounded">View</button>
                 </div>
             </div>
-        </> 
+        </>
     );
-    
 }
-    
+
 export default SubTopic;
