@@ -18,7 +18,7 @@ function Topic({title} :  {title : string}){
                 </div>
                 <div className="h-[2vh] w-full bg-gray-200 p-2"></div>
                 <div className="w-full h-[90%] flex flex-col gap-5 p-2">
-                    { subTopics.map(subTopic => <SubTopic title={subTopic.title} type={subTopic.type}/>)}
+                    { subTopics.map(subTopic => <SubTopic title={subTopic.title} type={subTopic.type} id={subTopic.id}/>)}
                 </div>
             </div>
         </> 

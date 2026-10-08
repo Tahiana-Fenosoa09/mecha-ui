@@ -19,6 +19,13 @@ export interface SubTopicType {
     type: string
 }
 
+interface VideoType  {
+    id: number
+    videoSource: string , 
+    type: string
+}
+
+
 export interface TopicType {
     id: number , 
     title: string , 
@@ -53,6 +60,29 @@ const branches : BranchData[] = [
 
     },
 ];
+
+const videos : VideoType[] = [
+    {
+        id: 1 , 
+        videoSource : "https://www.youtube.com/embed/iGe8TrCHN1E?si=nC-UzX5U3rVVf1Cb", 
+        type: 'video'
+    },
+    {
+        id: 2 , 
+        videoSource : "https://www.youtube.com/embed/iGe8TrCHN1E?si=nC-UzX5U3rVVf1Cb" ,
+        type: 'video'
+    }, 
+    {
+        id: 3 , 
+        videoSource : "https://www.youtube.com/embed/iGe8TrCHN1E?si=nC-UzX5U3rVVf1Cb" ,
+        type: 'video'
+    },
+    {
+        id: 4 , 
+        videoSource : "https://www.youtube.com/embed/iGe8TrCHN1E?si=nC-UzX5U3rVVf1Cb" ,
+        type: 'video'
+    }
+]
 
 
 const modules : ModuleData[] = [
@@ -100,6 +130,7 @@ const topics : TopicType[] = [
         type: 'video'
     }
 ];
+
 
 const subTopics : SubTopicType[] = [
     {
@@ -149,7 +180,13 @@ export function getTopicsAtModulesId(id: number) : TopicType[] {
     return topicsList;
 }
 
+export function getVideoById(id: number) : string {
+    const searchedVideo = videos.find((video) => {
+        return video.id === id;
+    })
 
+    return searchedVideo?.videoSource ?? "";
+}
 
 export function getBranchTitle(id: number) : string {
     const searchedBranch = branches.find((branch) => {
